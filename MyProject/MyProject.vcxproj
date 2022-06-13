@@ -133,6 +133,7 @@
     <ClInclude Include="BigNum.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="CoreAlgebra.h" />
+    <ClInclude Include="CoreAlgorithm.h" />
     <ClInclude Include="CoreClass.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vector.h" />

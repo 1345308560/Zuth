@@ -6,5 +6,7 @@ namespace Zuth {
 #include "CoreClass.h"
 // 核心代数
 #include "CoreAlgebra.h"
+// 核心算法
+#include"CoreAlgorithm.h"
 }
 #endif
