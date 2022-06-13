@@ -33,6 +33,41 @@ public:
 			for (int j = 0; j < colSize; j++)
 				pointer[i * colSize + j] = tempMatrix.pointer[i * colSize + j];
 	}
+	// 行数
+	int getRowSize() {
+		return rowSize;
+	}
+	// 列数
+	int getColSize() {
+		return colSize;
+	}
+	// 元素
+	dataType & getNum(int i, int j) {
+		return pointer[i * colSize + j];
+	}
+	// 块
+	Matrix block(int i, int j, int p, int q) {
+		int rows = p-i+1;
+		int cols = q-j+1;
+		dataType* newMat = new dataType[rows * cols];
+		for (int ii = 0; ii < rows; ii++)
+			for (int jj = 0; jj < cols; jj++)
+				newMat[ii * cols + jj] = pointer[(ii+i) * colSize + j+jj];
+		Matrix<dataType> tempMat(rows, cols, newMat);
+		return tempMat;
+	}
+	Matrix row(int i) {
+		dataType* newMat = new dataType[colSize];
+		for (int j = 0; j < colSize; j++)newMat[j] = pointer[i * colSize + j];
+		Matrix<dataType> tempMat(1, colSize, newMat);
+		return tempMat;
+	}
+	Matrix col(int i) {
+		dataType* newMat = new dataType[rowSize];
+		for (int j = 0; j < rowSize; j++)newMat[j] = pointer[j * colSize + i];
+		Matrix<dataType> tempMat(rowSize, 1, newMat);
+		return tempMat;
+	}
 	//重载运算符+
 	Matrix operator+(const Matrix& otherMat) {
 		int rows = rowSize;
@@ -56,6 +91,26 @@ public:
 		return tempMat;
 	}
 	//重载运算符*
+	Matrix operator*(double num) {
+		int rows = rowSize;
+		int cols = colSize;
+		dataType* newMat = new dataType[rows * cols];
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				newMat[i * cols + j] =pointer[i * cols + j]* num;
+		Matrix<dataType> tempMat(rows, cols, newMat);
+		return tempMat;
+	}
+	Matrix operator*(int num) {
+		int rows = rowSize;
+		int cols = colSize;
+		dataType* newMat = new dataType[rows * cols];
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				newMat[i * cols + j] = pointer[i * cols + j] * num;
+		Matrix<dataType> tempMat(rows, cols, newMat);
+		return tempMat;
+	}
 	Matrix operator*(const Matrix& otherMat) {
 		int rows = rowSize;
 		int cols = colSize;
@@ -83,9 +138,8 @@ public:
 				else os << m.pointer[i * cols + j] << "\n";
 		return os;
 	}
+	
 };
-
-
 #endif 
 
 

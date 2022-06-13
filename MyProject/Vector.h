@@ -1,5 +1,5 @@
 #ifndef _VECTOR_H
-# define  _VECTOR_H
+#define  _VECTOR_H
 
 template<typename Type>
 class Vector {
@@ -37,7 +37,7 @@ public:
 	}
 	// 移除最后一个元素
 	void popback() {
-		if (size < cap / 2)resize(cap / 2);
+		if (size < cap / 4)resize(cap / 2);
 		size--;
 	}
 	// 调整大小
