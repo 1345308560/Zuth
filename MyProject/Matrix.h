@@ -68,6 +68,36 @@ public:
 		Matrix<dataType> tempMat(rowSize, 1, newMat);
 		return tempMat;
 	}
+	//伴随矩阵
+	Matrix adgMatrix() {
+		Matrix<dataType> newM(rowSize,colSize);
+		for (int i = 0; i < rowSize; i++)
+			for (int j = 0; j < colSize; j++)
+				if((i+j)%2==0)
+					newM.getNum(i, j) = Del(modMatrix(i,j));
+				else
+					newM.getNum(i, j) = -Del(modMatrix(i, j));
+		int d = Del(newM);
+		for (int i = 0; i < rowSize; i++)
+			for (int j = 0; j < colSize; j++)
+				newM.getNum(i, j) /= d;
+		return Transpose(newM);
+	}
+	// 代数余子式
+	Matrix modMatrix(int k, int l) {
+		Matrix<dataType> newM(rowSize-1, colSize-1);
+		int ii = 0, jj = 0;
+		for (int i = 0; i < colSize; i++) {
+			if (k == i)continue;
+			for (int j = 0; j < colSize; j++) {
+				if (l == j)continue;
+				newM.getNum(ii, jj) = getNum(i, j);
+				jj++;
+			}
+			ii++;
+		}
+		return newM;
+	}
 	//重载运算符+
 	Matrix operator+(const Matrix& otherMat) {
 		int rows = rowSize;

@@ -6,14 +6,20 @@ void test_algebra();
 void test_class();
 int main()
 {	
-	// test_algorithm();
+	  test_algorithm();
 	// test_algebra();
-	test_class();
+	//test_class();
 }
 void test_class() {
+	// 大数
 	Zuth::BigNum b1(123);
 	Zuth::BigNum b2= b1 * 99;
-	cout << b2;
+	cout << b2<<endl;
+	// 矩阵的逆
+	double data[4] = { 1,2,3,4 };
+	Zuth::Matrix<double> m1(2, 2,data );
+	Zuth::Matrix<double> m2 = m1.adgMatrix();
+	cout << m1 << m2;
 }
 void test_algebra() {
 	// 素数筛
@@ -56,4 +62,42 @@ void test_algorithm() {
 	Zuth::Matrix<int> M3;
 	M2 = Zuth::Difference(M);
 	cout << "difference matrix\n" << M2 << endl;
+	// 并查集
+	Zuth::DisjointSet Ds(10);
+	cout << "size is " << Ds.setNumber() << endl;
+	Ds.dUnion(0, 1);
+	Ds.dUnion(0, 5);
+	cout << "size is "<<Ds.setNumber() << endl;
+	// 快速排序
+	int dataq[6] = { 5,7,3,9,3,7 };
+	cout << "quick sort" << endl;
+	for (int i = 0; i < 6; i++)cout << dataq[i] << " ";
+	cout << endl;
+	Zuth::quickSort(dataq,  6);
+	for (int i = 0; i < 6; i++)cout << dataq[i] << " ";
+	cout << endl;
+	// 归并排序
+	int datam[6] = { 5,7,3,9,3,7 };
+	cout << "merge sort" << endl;
+	for (int i = 0; i < 6; i++)cout << datam[i] << " ";
+	cout << endl;
+	Zuth::mergeSort(datam, 0,6);
+	for (int i = 0; i < 6; i++)cout << datam[i] << " ";
+	cout << endl;
+	// 堆排序
+	int datah[6] = { 5,7,3,9,3,7 };
+	cout << "heap sort" << endl;
+	for (int i = 0; i < 6; i++)cout << datah[i] << " ";
+	cout << endl;
+	Zuth::heapSort(datah, 6);
+	for (int i = 0; i < 6; i++)cout << datah[i] << " ";
+	cout << endl;
+	// 希尔排序
+	int datas[6] = { 5,7,3,9,3,7 };
+	cout << "shell sort" << endl;
+	for (int i = 0; i < 6; i++)cout << datas[i] << " ";
+	cout << endl;
+	Zuth::shellSort(datas, 6);
+	for (int i = 0; i < 6; i++)cout << datas[i] << " ";
+	cout << endl;
 }

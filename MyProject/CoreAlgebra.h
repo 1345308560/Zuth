@@ -6,7 +6,7 @@
 
 // 矩阵的行列式
 template<typename Type>
-double Del(Matrix<Type>& m) {
+double Del(Matrix<Type> m) {
 	if (m.getRowSize() == 1)return m.getNum(0, 0);
 	else if (m.getRowSize() == 2) 
 		return m.getNum(0, 0) * m.getNum(1, 1) - m.getNum(1, 0) * m.getNum(0, 1);
