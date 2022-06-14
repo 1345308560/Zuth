@@ -41,5 +41,14 @@
     <ClInclude Include="CoreAlgorithm.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AdvancedAlgebra.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Dense.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvancedAlgorithm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

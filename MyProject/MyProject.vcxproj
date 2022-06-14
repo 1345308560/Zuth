@@ -130,11 +130,14 @@
     <ClCompile Include="MyProject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdvancedAlgebra.h" />
+    <ClInclude Include="AdvancedAlgorithm.h" />
     <ClInclude Include="BigNum.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="CoreAlgebra.h" />
     <ClInclude Include="CoreAlgorithm.h" />
     <ClInclude Include="CoreClass.h" />
+    <ClInclude Include="Dense.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

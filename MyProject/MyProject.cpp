@@ -1,14 +1,48 @@
 ﻿#include <iostream>
 #include "Core.h"
+#include "AdvancedAlgebra.h"
+#include "AdvancedAlgorithm.h"
 using namespace std;
 void test_algorithm();// 核心算法代码测试
 void test_algebra();
 void test_class();
+void test_advanced_algorithm();// 测试高级算法
+void test_advanced_algebre();
+double func1(double n) { return n; }// 线性函数
 int main()
 {	
-	  test_algorithm();
+	 //test_algorithm();
 	// test_algebra();
 	//test_class();
+	//test_advanced_algorithm();
+	//test_advanced_algebre();
+}
+void test_advanced_algebre() {
+	// 辛普森
+	cout << Zuth::simpsonIntegration(func1, 0, 1)<<endl;
+	// 自适应辛普森
+	cout << Zuth::zSimpsonIntegration(func1, 0, 1, 0.0001)<<endl;
+	// 
+	double data[12] = { 2,1,-1,8,-3,-1,2,-11,-2,1,2,-3 };
+	Zuth::Matrix<double> m(3, 4, data);
+	Zuth::Matrix<double> m2 = Zuth::gaussianElimination(m);
+	cout << m << m2 << endl;
+}
+void test_advanced_algorithm() {
+	// 线段树
+	Zuth::SegmentTree seg(51);
+	std::vector<int> nums{ 1,2,3,4,5,6,2,2,7,8,9,0 };
+	for (auto i : nums) {
+		seg.insert(i);
+	}
+	cout << seg.count(2, 3) << endl;
+	seg.erase(3);
+	cout << seg.count(2, 3) << endl;
+	// 乘法逆元
+	int n1=5, n2=7, n3, n4;
+	Zuth::exgcd(n1, n2, n3, n4);
+	cout << n1 << " " << n2 << " " << n3 << " " << n4 << endl;
+
 }
 void test_class() {
 	// 大数

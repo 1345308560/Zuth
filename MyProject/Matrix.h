@@ -68,7 +68,7 @@ public:
 		Matrix<dataType> tempMat(rowSize, 1, newMat);
 		return tempMat;
 	}
-	//°éËæ¾ØÕó
+	//Äæ¾ØÕó
 	Matrix adgMatrix() {
 		Matrix<dataType> newM(rowSize,colSize);
 		for (int i = 0; i < rowSize; i++)
