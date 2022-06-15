@@ -1,6 +1,8 @@
 #ifndef _MATRIX_H
 #define  _MATRIX_H
 
+#include"Vector.h"
+
 template <typename dataType>
 class Matrix {
 	// 矩阵指针
@@ -16,6 +18,14 @@ public:
 		pointer = new dataType[rows * cols];
 	}
 	// 使用数组构造
+	Matrix(int rows, int cols, Zuth::Vector<dataType> dataPointer) {
+		rowSize = rows;
+		colSize = cols;
+		pointer = new dataType[rows * cols];
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				pointer[i * cols + j] = dataPointer[i * cols + j];
+	}
 	Matrix(int rows, int cols, dataType** dataPointer) {
 		rowSize = rows;
 		colSize = cols;

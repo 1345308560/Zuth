@@ -6,7 +6,7 @@ namespace Zuth {
 // 密集矩阵
 #include"Dense.h"
 // 稀疏矩阵
-
+#include"Sparse.h"
 // 数值积分 
 
 const int N = 1000 * 1000;

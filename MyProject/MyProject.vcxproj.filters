@@ -18,6 +18,9 @@
     <ClCompile Include="MyProject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Bpnet.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -48,6 +51,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="AdvancedAlgorithm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sparse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Bpnet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineLearning.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IntelligentAlgorithm.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

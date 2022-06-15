@@ -127,18 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bpnet.cpp" />
     <ClCompile Include="MyProject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdvancedAlgebra.h" />
     <ClInclude Include="AdvancedAlgorithm.h" />
     <ClInclude Include="BigNum.h" />
+    <ClInclude Include="Bpnet.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="CoreAlgebra.h" />
     <ClInclude Include="CoreAlgorithm.h" />
     <ClInclude Include="CoreClass.h" />
     <ClInclude Include="Dense.h" />
+    <ClInclude Include="IntelligentAlgorithm.h" />
+    <ClInclude Include="MachineLearning.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Sparse.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
