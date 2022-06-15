@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <vector>
 #include "Core.h"
 #include "AdvancedAlgebra.h"
 #include "AdvancedAlgorithm.h"
@@ -15,18 +16,47 @@ int main()
 	// test_algebra();
 	//test_class();
 	//test_advanced_algorithm();
-	//test_advanced_algebre();
+	test_advanced_algebre();
 }
 void test_advanced_algebre() {
 	// 辛普森
 	cout << Zuth::simpsonIntegration(func1, 0, 1)<<endl;
 	// 自适应辛普森
 	cout << Zuth::zSimpsonIntegration(func1, 0, 1, 0.0001)<<endl;
-	// 
+	// 高斯消元
 	double data[12] = { 2,1,-1,8,-3,-1,2,-11,-2,1,2,-3 };
 	Zuth::Matrix<double> m(3, 4, data);
 	Zuth::Matrix<double> m2 = Zuth::gaussianElimination(m);
 	cout << m << m2 << endl;
+	// LU分解求解线性方程组
+	Zuth::Vector<double> ans1 = Zuth::LUsolve(m);
+	cout << m << endl;
+	for (int i = 0; i < ans1.getsize(); i++)cout << ans1[i] << ' ';
+	cout <<endl;
+	// QR分解
+	double datan[9] = { 2,-2,3,1,1,1,1,3,-1 };
+	Zuth::Matrix<double> M2(3,3,datan);
+	cout << M2 << endl;
+	Zuth::Vector<Zuth::Matrix<double> >ans2=Zuth::QR<double>(M2);
+	cout << ans2[0] << ans2[1] << endl;
+	// QR分解求解方程
+	Zuth::Vector<double>  ans3=Zuth::QRsolve(m);
+	for (int i = 0; i < ans3.getsize(); i++)cout << ans3[i] << ' ';
+	cout << endl;
+	// 曲线拟合
+	double arry1[5] = { 0,0.25,0,5,0.75 };
+	double arry2[5] = { 1,1.283,1.649,2.212,2.178 };
+	double coefficient[5];
+	memset(coefficient, 0, sizeof(double) * 5);
+	std::vector<double> vx, vy;
+	for (int i = 0; i < 5; i++)
+	{
+		vx.push_back(arry1[i]);
+		vy.push_back(arry2[i]);
+	}
+	Zuth::CurveFit<double> cf(vx, vy, 5, 3, coefficient);
+	
+	printf("拟合方程为：y = %lf + %lfx + %lfx^2 \n", coefficient[1], coefficient[2], coefficient[3]);
 }
 void test_advanced_algorithm() {
 	// 线段树
