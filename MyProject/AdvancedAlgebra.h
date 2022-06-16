@@ -40,6 +40,34 @@ double zSimpsonIntegration(double (*f)(double),double l, double r, double eps) {
     return asr(f,l, r, eps, simpson(f,l, r), 12);
 }
 
+int Catalan(int n) {
+    long long f[100]={};
+    f[0] = 1;
+    for (int i = 1; i <= n; i++) f[i] = f[i - 1] * (4 * i - 2) / (i + 1);
+    return f[n];
+}
+int Bell(int n) {
+    Zuth::Vector<int> n1;
+    n1.pushback(1);
+    for (int i = 2; i <= n; i++) {
+        Zuth::Vector<int> n2;
+        n2.pushback(n1[n1.getsize()-1]);
+        for (int j = 0; j < n1.getsize(); j++)
+            n2.pushback(n2[n2.getsize() - 1] + n1[n2.getsize() - 1]);
+        n1 = n2;
+    }
+    return n1[0];
+}
+double sqrtNewton(double n) {
+    const double eps = 1E-15;
+    double x = 1;
+    while (true) {
+        double nx = (x + n / x) / 2;
+        if (abs(x - nx) < eps) break;
+        x = nx;
+    }
+    return x;
+}
 }
 
 #endif

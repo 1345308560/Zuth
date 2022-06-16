@@ -8,9 +8,10 @@ D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Bpnet.cpp(
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Bpnet.cpp(266,35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Bpnet.cpp(319,52): warning C4042: “sampleIn”: 有坏的存储类
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Bpnet.cpp(324,54): warning C4042: “sampleOut”: 有坏的存储类
+D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\AdvancedAlgebra.h(47,15): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\IntelligentAlgorithm.h(35,14): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Matrix.h(98,9): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\Matrix.h(90): message : 在编译 类 模板 成员函数“Zuth::Matrix<double> Zuth::Matrix<double>::adgMatrix(void)”时
-D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\MyProject.cpp(157): message : 查看对正在编译的函数 模板 实例化“Zuth::Matrix<double> Zuth::Matrix<double>::adgMatrix(void)”的引用
+D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\MyProject.cpp(174): message : 查看对正在编译的函数 模板 实例化“Zuth::Matrix<double> Zuth::Matrix<double>::adgMatrix(void)”的引用
 D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\MyProject\MyProject.cpp(82): message : 查看对正在编译的 类 模板 实例化“Zuth::Matrix<double>”的引用
   MyProject.vcxproj -> D:\Study\大三下\1 C++程序设计\C++大作业\MyProject\x64\Debug\MyProject.exe

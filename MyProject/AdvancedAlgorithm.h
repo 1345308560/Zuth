@@ -93,6 +93,42 @@ namespace Zuth {
 		exgcd(b, a % b, y, x);
 		y -= a / b * x;
 	}
+	class BitTree {
+		int n;
+		Zuth::Vector<int> tree;
+	public:
+		BitTree(Zuth::Vector<int> V) {
+			n = V.getsize();
+			Zuth::Vector<int> temp(n);
+			tree = n;
+			for (int i = 1; i <= n; i++)add(i, V[i]);
+		}
+		int lowbit(int k)
+		{
+			return k & -k;
+		}
+		void add(int x, int k)
+		{
+			while (x <= n)
+			{
+				tree[x] += k;
+				x += lowbit(x);
+			}
+		}
+		int qSum(int i, int j) {
+			return sum(j) - sum(i);
+		}
+		int sum(int x)
+		{
+			int ans = 0;
+			while (x != 0)
+			{
+				ans += tree[x];
+				x -= lowbit(x);
+			}
+			return ans;
+		}
+	};
 }
 
 #endif

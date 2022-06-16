@@ -18,12 +18,12 @@ double func2(double n) { return n * n; }// 二次函数
 int main()
 {	
 	 //test_algorithm();
-	// test_algebra();
+	 //test_algebra();
 	//test_class();
-	//test_advanced_algorithm();
+	test_advanced_algorithm();
 	//test_advanced_algebre();
 	//test_machine_learning();
-	test_Inte_algorithm();
+	 //test_Inte_algorithm();
 }
 void test_Inte_algorithm() {
 	// 爬山
@@ -129,6 +129,13 @@ void test_advanced_algebre() {
 	sm7 = sm7.Transpose();
 	ms3 = sm7.orignMatrix();
 	cout << m7<<endl<<ms3;
+	// 卡特兰数
+	cout << Zuth::Catalan(10);
+	cout << endl;
+	// 贝尔数
+	cout << Zuth::Bell(4);
+	// 开方
+	cout << endl << "sqrt(67)=" << Zuth::sqrtNewton(67) << endl;
 }
 void test_advanced_algorithm() {
 	// 线段树
@@ -144,15 +151,25 @@ void test_advanced_algorithm() {
 	int n1=5, n2=7, n3, n4;
 	Zuth::exgcd(n1, n2, n3, n4);
 	cout << n1 << " " << n2 << " " << n3 << " " << n4 << endl;
-
+	// 树状数组
+	Zuth::Vector<int> Zu;
+	for (int i = 0; i < 9; i++)Zu.pushback(i+1);
+	Zuth::BitTree Zb(Zu);
+	cout << Zb.qSum(1, 2);
 }
 void test_class() {
+	// 矩阵运算
+	double data[4] = { 1,2,3,4 };
+	Zuth::Matrix<double> m11(2, 2, data);
+	Zuth::Matrix<double> m12 = m11 + m11;
+	cout << m11 << m12;
+	Zuth::Matrix<double> m13 = m12 * m11;
+	cout << m11 << m13;
 	// 大数
 	Zuth::BigNum b1(123);
 	Zuth::BigNum b2= b1 * 99;
 	cout << b2<<endl;
 	// 矩阵的逆
-	double data[4] = { 1,2,3,4 };
 	Zuth::Matrix<double> m1(2, 2,data );
 	Zuth::Matrix<double> m2 = m1.adgMatrix();
 	cout << m1 << m2;
